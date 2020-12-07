@@ -1,0 +1,16 @@
+eqri
+bori
+addi
+bani
+seti
+eqrr
+addr
+gtri
+borr
+gtir
+setr
+eqir
+mulr
+muli
+gtrr
+banr

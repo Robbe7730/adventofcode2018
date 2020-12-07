@@ -1,0 +1,25 @@
+import Data.List.Split
+import Data.Trees.KdTree
+
+data Point2d = Point2d
+    { p2x :: Double
+    , p2y :: Double
+    }
+
+instance Point Point2d where
+    dimension _ = 2
+    coord 0 = p2x
+    coord 1 = p2y
+    dist2 a b = ((p2x a) - (p2x b)) + ((p2y a) - (p2y b))
+
+main :: IO ()
+main = do
+    input <- readFile "testinput.txt"
+    print $ map readCoord $ lines input
+
+readCoord :: String -> (Int, Int)
+readCoord s =
+    let sSplit = splitOn ", " s
+        a = read (head sSplit) :: Int
+        b = read (last sSplit) :: Int
+     in (a, b)
